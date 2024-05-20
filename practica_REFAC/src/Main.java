@@ -4,13 +4,12 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String p = "Proves";
 
         int opcio;
         do {
             System.out.println("1. Comparar números");
-            System.out.println("2. Calcular ecuación de segundo grado");
-            System.out.println("3. Crear orden");
+            System.out.println("2. Calcular equació de segon grau");
+            System.out.println("3. Crear ordre");
             System.out.println("0. Acabar");
 
             opcio = scan.nextInt();
@@ -20,13 +19,13 @@ public class Main {
                     compararNumeros(scan);
                     break;
                 case 2:
-                    calcularEcuacionSegundoGrado();
+                    calcularEquacioSegonGrau();
                     break;
                 case 3:
-                    crearOrden();
+                    crearOrdre();
                     break;
                 case 0:
-                    System.out.println("Adiós!");
+                    System.out.println("Adéu!");
                     break;
                 default:
                     System.out.println("ATENCIÓ!!! \nHa de ser un valor entre 0 i 3");
@@ -35,27 +34,27 @@ public class Main {
     }
 
     private static void compararNumeros(Scanner scan) {
-        System.out.println("Introduce el primer número: ");
+        System.out.println("Introdueix el primer número: ");
         int num1 = scan.nextInt();
-        System.out.println("Introduce el segundo número: ");
+        System.out.println("Introdueix el segon número: ");
         int num2 = scan.nextInt();
         if (Comparador.max(num1, num2)) {
-            System.out.println("El primer número es mayor.");
+            System.out.println("El primer número és més gran.");
         } else {
-            System.out.println("El segundo número es mayor o igual.");
+            System.out.println("El segon número és més gran o igual.");
         }
     }
 
-    private static void calcularEcuacionSegundoGrado() {
+    private static void calcularEquacioSegonGrau() {
         double a = 2;
         double b = 3;
         double c = 1;
-        Calculadora.calcEquacioSegongrau(a, b, c);
+        Calculadora.calcEquacioSegonGrau(a, b, c);
     }
 
-    private static void crearOrden() {
-        List<OrderLineItem> lineItems = null; // Aquí deberías obtener los datos necesarios
+    private static void crearOrdre() {
+        List<OrderLineItem> lineItems = null; // Aquí hauríeu d'obtenir les dades necessàries
         Order asd = new Order(lineItems, 5.5);
-        System.out.println("Orden creada con total: " + asd.calculateTotalPrice());
+        System.out.println("Ordre creada amb total: " + asd.calculateTotalPrice());
     }
 }
